@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 import ContactForm from './ContactForm/ContactForm.';
+import css from './App.module.css';
 
 export class App extends React.Component {
   state = {
@@ -66,7 +67,7 @@ export class App extends React.Component {
     const filteredContacts = this.getFilteredContacts();
 
     return (
-      <div>
+      <div className={css.container}>
         <h1>Phonebook</h1>
         <ContactForm addContactCallback={this.addContact} />
         <h2>Contacts</h2>

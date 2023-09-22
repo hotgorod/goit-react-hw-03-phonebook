@@ -1,0 +1,11 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding: 10px;
+  background-color: #c9bcc7;
+}
+.contactFormInputP {
+  width: 100%;
+}
