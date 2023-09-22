@@ -1,0 +1,8 @@
+.contactListItem {
+  display: flex;
+  align-items: center;
+}
+
+.contactListItemText {
+  margin-right: 10px;
+}
