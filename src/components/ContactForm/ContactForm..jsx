@@ -1,5 +1,4 @@
 import React from 'react';
-import { nanoid } from 'nanoid';
 import css from './ContactForm.module.css';
 
 class ContactForm extends React.Component {
@@ -14,8 +13,7 @@ class ContactForm extends React.Component {
   };
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
-
+    
     this.props.addContactCallback(this.state.name, this.state.number);
 
     this.setState({ name: '', number: '' });
