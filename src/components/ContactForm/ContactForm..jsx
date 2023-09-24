@@ -27,6 +27,7 @@ class ContactForm extends React.Component {
         <label>
           Name
           <input
+            className={css.inputText}
             type="text"
             name="name"
             value={this.state.name}
@@ -40,6 +41,7 @@ class ContactForm extends React.Component {
         <label>
           Number
           <input
+            className={css.inputText}
             type="tel"
             name="number"
             value={this.state.number}
@@ -49,7 +51,7 @@ class ContactForm extends React.Component {
             // required
           />
         </label>
-        <button type="submit">Add contact</button>
+        <button type="submit" className={css.formButton}>Add contact</button>
       </form>
     );
   }
