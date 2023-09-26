@@ -26,6 +26,7 @@ export class App extends React.Component {
     filter: '',
   };
 
+  
   componentDidMount() {
     const savedContacts = localStorage.getItem(LS_KONTACT_KEY);
     const contactsToObject = JSON.parse(savedContacts) || [];
