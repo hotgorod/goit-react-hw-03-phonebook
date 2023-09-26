@@ -5,6 +5,8 @@ import Filter from 'components/Filter/Filter';
 import ContactForm from './ContactForm/ContactForm.';
 import css from './App.module.css';
 
+const LS_KONTACT_KEY = 'contact_detais';
+
 export class App extends React.Component {
   state = {
     contacts: [
@@ -23,6 +25,17 @@ export class App extends React.Component {
     ],
     filter: '',
   };
+
+  componentDidMount() {
+    const savedContacts = localStorage.getItem(LS_KONTACT_KEY);
+    const contactsToObject = JSON.parse(savedContacts) || [];
+    this.setState({ contacts: contactsToObject });
+  }
+
+  componentDidUpdate() {
+    const jsonContacts = JSON.stringify(this.state.contacts);
+    localStorage.setItem(LS_KONTACT_KEY, jsonContacts);
+  }
 
   deleteContact = contactKey => {
     this.setState(prevState => ({
