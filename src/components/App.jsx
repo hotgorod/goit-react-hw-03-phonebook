@@ -31,13 +31,15 @@ export class App extends React.Component {
     const savedContacts = localStorage.getItem(LS_KONTACT_KEY);
     const contactsToObject = JSON.parse(savedContacts) || [];
     this.setState({ contacts: contactsToObject });
+    
   }
 
   componentDidUpdate(_, prevState) {
-    if (this.state.contacts !== prevState.contacts.length) {
+    if (this.state.contacts.length !== prevState.contacts.length) {
       const jsonContacts = JSON.stringify(this.state.contacts);
       localStorage.setItem(LS_KONTACT_KEY, jsonContacts);
     }
+    
   }
 
   deleteContact = contactKey => {
